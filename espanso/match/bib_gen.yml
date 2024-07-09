@@ -1,0 +1,37 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  - regex: ":cite:(?P<citation>.*?):"
+    replace: "{{final}}"
+    vars:
+      - name: dblp_search_results
+        type: script
+        params:
+          args:
+            - python
+            - "%CONFIG%/scripts/dblp_multi_search.py"
+            - "{{citation}}"
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Select bib entry:
+            [[entries]]
+          fields:
+            entries:
+              type: list
+              values: "{{dblp_search_results}}"
+      - name: final
+        type: script
+        params:
+          args:
+            - python
+            - "%CONFIG%/scripts/bib_generator.py"
+            - "{{form1.entries}}"
