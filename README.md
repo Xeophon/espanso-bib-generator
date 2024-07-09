@@ -3,8 +3,9 @@ Generates a bib entry from a matching regex using espanso
 
 ## Installation
 
-1. Install [Espanso](https://github.com/espanso/espanso)
-2. Place the scripts in the corresponding %CONFIG% folder of espanso ([Documentation](https://espanso.org/docs/configuration/basics/))
+1. Install Python on your machine. The scripts do use the systems Python interpreter, but no external libraries.
+2. Install [Espanso](https://github.com/espanso/espanso)
+3. Place the scripts in the corresponding %CONFIG% folder of espanso ([Documentation](https://espanso.org/docs/configuration/basics/))
 
 ## Usage
 Just write `:cite:<your search>:` anywhere, it will spawn a GUI and then replace your text with the .bib entry you selected in the GUI. It uses the [DBLP](https://dblp.org/) API under the hood, which is restricted to computer science papers only. I highly recommend search with `<Author> <Some parts of the title>` to improve the search results, as `<Some parts of the title>` often results in irrelevant results.
