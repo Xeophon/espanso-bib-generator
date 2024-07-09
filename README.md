@@ -3,7 +3,7 @@ Generates a bib entry from a matching regex using espanso
 
 ## Installation
 
-1. Install Python on your machine. The scripts do use the systems Python interpreter, but no external libraries.
+1. Install Python on your machine. The scripts uses the systems Python interpreter, but no external libraries.
 2. Install [Espanso](https://github.com/espanso/espanso)
 3. Place the scripts in the corresponding %CONFIG% folder of espanso ([Documentation](https://espanso.org/docs/configuration/basics/))
 
